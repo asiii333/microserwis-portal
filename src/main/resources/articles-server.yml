@@ -1,0 +1,13 @@
+# Configure articles server
+# Spring properties
+spring:
+  application:
+     name: articles-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1112/eureka/
+     
+server:
+  port: 2221   # HTTP (Tomcat) port
