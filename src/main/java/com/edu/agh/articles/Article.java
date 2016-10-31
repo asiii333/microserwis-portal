@@ -1,12 +1,19 @@
 package com.edu.agh.articles;
 
-/**
- * Created by asiab on 2016-10-16.
- */
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "T_ARTICLES")
 public class Article {
-    private String id = "-1";
-    private String title = "example title";
-    private String content = "asd";
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
+    @Column(name = "art_number")
+    private String artNumber;
+    private String title;
+    private String content;
+    private String category;
 
     public String getId() {
         return id;
@@ -35,5 +42,21 @@ public class Article {
     @Override
     public String toString(){
         return "Article id: " + id + " title: " + title;
+    }
+
+    public String getNumber() {
+        return artNumber;
+    }
+
+    public void setNumber(String art_number) {
+        this.artNumber = art_number;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

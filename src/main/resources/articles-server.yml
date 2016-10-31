@@ -3,7 +3,19 @@
 spring:
   application:
      name: articles-service
-
+  datasource:
+      url: jdbc:mysql://localhost:3306/articles
+      username: user1
+      password: user1
+      testWhileIdle: true
+      validationQuery: SELECT 1
+  jpa:
+      show-sql: true
+      hibernate:
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5Dialect
 eureka:
   client:
     serviceUrl:
