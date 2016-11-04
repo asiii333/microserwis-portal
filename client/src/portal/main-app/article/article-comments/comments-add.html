@@ -1,0 +1,24 @@
+
+<div class="col-md-10 col-md-offset-1">
+    <h4 class="form-signin-heading">Dodaj komentarz</h4>
+</div>
+
+<div class="col-md-5 col-md-offset-1">
+
+    <form  ng-submit="addComent()">
+
+        <div class="form-group ">
+            <label for="inputName" class="sr-only">Imie</label>
+            <input type="text" id="inputName" class="form-control form-control-sm" placeholder="Imie" required="true" autofocus="" ng-model="newComment.name"/>
+        </div>
+
+        <div class="form-group">
+            <label for="comment" class="sr-only">Komentarz</label>
+            <textarea type="text" id="comment" class="form-control form-control-sm" placeholder="Komentarz" required="true" ng-model="newComment.content"></textarea>
+        </div>
+
+        <button class="btn btn-sm btn-primary" type="submit">Wyślij</button>
+
+    </form>
+
+</div>

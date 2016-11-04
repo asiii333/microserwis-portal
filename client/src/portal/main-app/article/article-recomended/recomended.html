@@ -1,0 +1,29 @@
+<div ng-controller="articleCtr">
+
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-1" >
+            <h3>
+                Ostatnie Artykuły:
+            </h3>
+            <ul>
+                <li ng-repeat="art in lastArticle">
+                    <a ui-sref="article/{{art.num}}">{{ art.title }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class=" col-md-10 col-md-offset-1" >
+            <h3>
+                Podobne Artykuły:
+            </h3>
+            <ul>
+                <li ng-repeat="art in similarArticle">
+                    <a ui-sref="article/{{art.num}}">{{ art.title }}</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>

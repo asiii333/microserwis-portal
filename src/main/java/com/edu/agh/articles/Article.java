@@ -11,9 +11,7 @@ public class Article {
     private String id;
     @Column(name = "art_number")
     private String artNumber;
-    private String title;
     private String content;
-    private String category;
 
     public String getId() {
         return id;
@@ -21,14 +19,6 @@ public class Article {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getContent() {
@@ -41,7 +31,7 @@ public class Article {
 
     @Override
     public String toString(){
-        return "Article id: " + id + " title: " + title;
+        return "Article id: " + id;
     }
 
     public String getNumber() {
@@ -52,11 +42,4 @@ public class Article {
         this.artNumber = art_number;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 }

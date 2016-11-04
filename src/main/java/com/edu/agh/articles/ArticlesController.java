@@ -20,10 +20,10 @@ public class ArticlesController {
     @Autowired
     private ArticleRepository articleRepository;
 
-    @RequestMapping(value = "/hello/{articleNumber}")
+    @RequestMapping(value = "/article/{articleNumber}")
     public Article byNumber(@PathVariable("articleNumber") String articleNumber) {
 
-        logger.info("artivle-service byNumber() invoked: " + articleNumber);
+        logger.info("article-service find article byNumber() invoked: " + articleNumber);
 
         Article article = articleRepository.findByArtNumber(articleNumber);
 
@@ -34,16 +34,6 @@ public class ArticlesController {
         else {
             return article;
         }
-    }
-
-    @RequestMapping(value = "/hello")
-    public String hello() {
-
-        logger.info("artivle-service hello() ");
-        JSONObject obj = new JSONObject();
-        obj.put("id", "2");
-        obj.put("content", "asd");
-        return obj.toJSONString();
     }
 
 }

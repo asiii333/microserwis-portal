@@ -1,0 +1,25 @@
+# Configure comments server
+# Spring properties
+spring:
+  application:
+     name: comments-service
+  datasource:
+      url: jdbc:mysql://localhost:3306/comments
+      username: user1
+      password: user1
+      testWhileIdle: true
+      validationQuery: SELECT 1
+  jpa:
+      show-sql: true
+      hibernate:
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5Dialect
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1112/eureka/
+
+server:
+  port: 2222   # HTTP (Tomcat) port

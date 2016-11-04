@@ -1,6 +1,5 @@
-package com.edu.agh.articles;
+package com.edu.agh.titles;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,13 +8,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import java.util.logging.Logger;
 
+/**
+ * Created by asiab on 2016-11-03.
+ */
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
-public class  ArticleConfiguration extends WebMvcConfigurerAdapter {
+public class TitleConfiguration extends WebMvcConfigurerAdapter {
     protected Logger logger;
 
-    public ArticleConfiguration() {
+    public TitleConfiguration() {
         logger = Logger.getLogger(getClass().getName());
     }
 

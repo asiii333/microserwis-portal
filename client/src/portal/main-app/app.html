@@ -1,0 +1,53 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+
+        <!--  bootstrap -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+
+
+        <!--  angular, ui-router -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+
+        <!-- custom js file -->
+        <script src="app.js"></script>
+        <script src="main/main.js"></script>
+        <script src="main/poland/poland-main.js"></script>
+        <script src="main/world/world-main.js"></script>
+        <script src="main/magazine/magazine-main.js"></script>
+        <script src="main/economy/economy-main.js"></script>
+
+        <script src="category/category.js"></script>
+        <script src="category/world/world.js"></script>
+        <script src="category/poland/poland.js"></script>
+        <script src="category/magazine/magazine.js"></script>
+        <script src="category/economy/economy.js"></script>
+        <script src="category/all/all-article.js"></script>
+
+        <script src="article/article.js"></script>
+        <script src="article/article-comments/comments.js"></script>
+        <script src="article/article-content/content.js"></script>
+        <script src="article/article-recomended/recomended.js"></script>
+
+    </head>
+
+
+    <body ng-app="mainApp">
+
+    <!-- NAVIGATION -->
+    <div class="header-wrapper" ng-include="'header/header.html'"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div ui-view></div>
+    </div>
+
+    <!--footer-->
+    <div  ng-include="'footer/footer.html'"></div>
+
+
+    </body>
+    </html>

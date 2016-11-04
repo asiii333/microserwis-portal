@@ -1,5 +1,6 @@
 package com.edu.agh.articles;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,6 @@ import java.util.List;
 public interface ArticleRepository extends Repository<Article, Long> {
 
     public Article findByArtNumber(String number);
-    public Article findByTitleIgnoreCase(String title);
-    public List<Article> findByCategoryIgnoreCase(String category);
+    public Article findByArtNumberPaged(String number, Pageable pageable);
+    Article save(Article article);
 }

@@ -1,0 +1,39 @@
+<div ng-controller="articleCtr">
+    <div class="row">
+
+        <div class=" col-md-10 col-md-offset-1" >
+            <div class="article-category">
+                {{articleTitle.category}}
+            </div>
+        </div>
+
+        <div class=" col-md-10 col-md-offset-1" >
+            <div class="article-title">
+               <h1> {{articleTitle.title}} </h1>
+            </div>
+        </div>
+
+        <div class=" col-md-8 col-md-offset-2" >
+            <div class="article-short">
+                <h3> {{articleTitle.describe}} </h3>
+            </div>
+            <div class="article-content">
+                {{articleContent.content}}
+            </div>
+        </div>
+
+        <div class=" col-md-10 col-md-offset-1" >
+            <div class="article-tag">
+
+                <span>tags:</span>
+                <ul>
+                    <li class="float-left" ng-repeat="tag in articleContent.tagsList">
+                        {{tag}}
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>
