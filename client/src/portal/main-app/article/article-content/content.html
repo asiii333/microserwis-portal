@@ -1,9 +1,17 @@
-<div ng-controller="articleCtr">
+<div ng-controller="articleContentCtr">
     <div class="row">
 
         <div class=" col-md-10 col-md-offset-1" >
             <div class="article-category">
-                {{articleTitle.category}}
+                Kategoria: {{articleTitle.category}}
+            </div>
+            <div class="article-tag">
+                <span>tagi:</span>
+                <span ng-repeat="tag in articleTitle.tagsList">
+                    <a class="" href="#" >
+                            {{tag}}
+                    </a>|
+                </span>
             </div>
         </div>
 
@@ -15,7 +23,7 @@
 
         <div class=" col-md-8 col-md-offset-2" >
             <div class="article-short">
-                <h3> {{articleTitle.describe}} </h3>
+                <h4> {{articleTitle.describe}} </h4>
             </div>
             <div class="article-content">
                 {{articleContent.content}}
@@ -23,15 +31,13 @@
         </div>
 
         <div class=" col-md-10 col-md-offset-1" >
-            <div class="article-tag">
-
-                <span>tags:</span>
-                <ul>
-                    <li class="float-left" ng-repeat="tag in articleContent.tagsList">
-                        {{tag}}
-                    </li>
-                </ul>
-
+            <div class="article-tag article-tag-down">
+                <span>tagi:</span>
+                <span ng-repeat="tag in articleTitle.tagsList">
+                    <a class="" href="#" >
+                            {{tag}}
+                    </a>|
+                </span>
             </div>
         </div>
 

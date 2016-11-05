@@ -1,4 +1,11 @@
 <div ng-controller="mainPageWorldCtr">
-    news form world
-    {{poalnd_example}}
+    <h3>
+        Świat
+    </h3>
+    <ul>
+        <li ng-repeat="art in articles" >
+            <a ui-sref="article/{{art.num}}">{{ art.title }}</a>
+        </li>
+    </ul>
+
 </div>

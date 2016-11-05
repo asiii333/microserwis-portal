@@ -1,4 +1,10 @@
 <div ng-controller="mainPageEconomyCtr">
-    news form economy
-    {{poalnd_example}}
+    <h3>
+        Gospodarka
+    </h3>
+    <ul>
+        <li ng-repeat="art in articles" >
+            <a ui-sref="article/{{art.num}}">{{ art.title }}</a>
+        </li>
+    </ul>
 </div>

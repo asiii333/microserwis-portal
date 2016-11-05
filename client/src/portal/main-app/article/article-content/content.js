@@ -1,19 +1,30 @@
 var articleContent = angular.module('article.content',[])
 
-.controller('articleCtr', function($scope){
+.controller('articleContentCtr', function($scope, $stateParams, $http){
 
-     $scope.articleNum = '1' //ze sciezki
-     $scope.articleTitle = getArticleTitle();
-     $scope.articleContent = getArticleContent();
+     $scope.articleNum = $stateParams.artNum; //ze sciezki
+     getArticleTitle();
+     getArticleContent();
+
 
 
      function getArticleTitle(){
-        return;
+        console.log('get article title');
+         $http.get('http://localhost:2223/title/' + $scope.articleNum).
+                then(function(response) {
+                   $scope.articleTitle =  response.data;
+                   console.log(response.data);
+                });
      }
 
      function getArticleContent(){
-        return;
-     }
+             console.log('get article content');
+              $http.get('http://localhost:2221/article/' + $scope.articleNum).
+                     then(function(response) {
+                        $scope.articleContent =   response.data;
+                        console.log(response.data);
+                     });
 
+     }
 
 });

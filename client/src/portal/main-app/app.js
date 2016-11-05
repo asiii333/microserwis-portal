@@ -5,6 +5,13 @@ var app = angular.module('mainApp', [
     'article'
     ]);
 
+app.controller('appCtr', function($scope){
+
+    $scope.commentsServisAdress = 'http://localhost:2222';
+    $scope.articleServisAdress = 'http://localhost:2221';
+    $scope.titleServisAdress = 'http://localhost:2223';
+
+});
 app.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/main');

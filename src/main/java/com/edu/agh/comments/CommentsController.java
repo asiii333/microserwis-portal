@@ -1,6 +1,5 @@
 package com.edu.agh.comments;
 
-import com.edu.agh.articles.Article;
 import com.edu.agh.articles.ArticlesController;
 import com.edu.agh.exceptions.ArticleNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +20,14 @@ public class CommentsController {
             .getName());
 
     @Autowired
-    private CommentsRepository commentsRepository;
+    private CommentRepository commentRepository;
 
     @RequestMapping(value = "/comments/{articleNumber}")
     public List<Comment> byNumber(@PathVariable("articleNumber") String articleNumber) {
 
         logger.info("comment-service get comments for: "  + articleNumber);
 
-        List<Comment> comment = commentsRepository.findByArtNumber(articleNumber);
+        List<Comment> comment = commentRepository.findByArtNumber(articleNumber);
 
         logger.info("comment-service comments number: " + comment.size());
 
@@ -46,7 +45,7 @@ public class CommentsController {
         logger.info("article-service find article byNumber() invoked: " + articleNumber);
 
         PageRequest pageRequest = prepareData(page);
-        List<Comment> comment = commentsRepository.findByArtNumberPaged(articleNumber,pageRequest);
+        List<Comment> comment = commentRepository.findByArtNumber(articleNumber,pageRequest);
 
         logger.info("artivle-service byNumber() found: " + articleNumber);
 
@@ -70,7 +69,7 @@ public class CommentsController {
 
         logger.info("add new comment, to article: " + comment.getArtNumber());
 
-        Comment newComment = commentsRepository.save(comment);
+        Comment newComment = commentRepository.save(comment);
 
         logger.info("comment add to article: " + comment.getArtNumber());
 

@@ -1,0 +1,57 @@
+<div  class="row" ng-controller="addArticle">
+
+    <div class="col-md-10 col-md-offset-1">
+
+        <h1>Nowy artykuł</h1>
+
+        <form  ng-submit="saveArticle()" style="margin-top:20px">
+
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="category">Kategoria</label>
+
+                    <select class="form-control input-sm" required="true" id="category" ng-model="newArticleTitle.category">
+                        <option value="polska">polska</option>
+                        <option value="swiat">świat</option>
+                        <option value="gospodarka">gospodarka</option>
+                        <option value="magazyn">magazyn</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="title">Tytuł</label>
+                <input type="text" id="title" class="form-control  input-sm" placeholder="Tytuł" required="true" autofocus="" ng-model="newArticleTitle.title"/>
+            </div>
+
+            <div class="form-group">
+                <label for="describe">Opis</label>
+                <textarea type="text" id="describe" class="form-control  input-sm" placeholder="Opis" required="true" autofocus="" ng-model="newArticleTitle.describe"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Treść</label>
+                <textarea type="text" id="content" class="form-control"  placeholder="Treść" rows="20" required="true" ng-model="newArticleContent.content"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Tagi</label>
+                <input type="text" id="tags" class="form-control  input-sm" placeholder="Tagi" required="true" autofocus="" ng-model="newArticleTitle.tag"/>
+            </div>
+
+            <button class="btn btn-primary " type="submit">Opublikuj</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<footer>
+    <div class="container custom-footer">
+        <p class="float-right">
+            <span class="footer-element"> © 2016 EAIiIB </span>
+        </p>
+    </div>
+</footer>

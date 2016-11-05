@@ -1,6 +1,6 @@
-<div ng-controller="categoryAllArticleCtr">
+<div ng-controller="categoryArticleListCtr"  class="col-md-10 col-md-offset-1 comment-top-margin">
 
-    <h1>Wszystkie artykuły</h1>
+    <h1>{{categoryName}}</h1>
     <div  class="col-md-10 col-md-offset-1">
         <div  ng-repeat="article in articleList">
             <a href="app.html#/article/{{article.artNumber}}">

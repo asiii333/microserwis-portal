@@ -1,6 +1,7 @@
 package com.edu.agh.articles;
 
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Entity
@@ -8,18 +9,10 @@ import javax.persistence.*;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
     @Column(name = "art_number")
     private String artNumber;
     private String content;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private Date publication_date;
 
     public String getContent() {
         return content;
@@ -31,7 +24,7 @@ public class Article {
 
     @Override
     public String toString(){
-        return "Article id: " + id;
+        return "Article id: " + artNumber;
     }
 
     public String getNumber() {
@@ -42,4 +35,11 @@ public class Article {
         this.artNumber = art_number;
     }
 
+    public Date getPublication_date() {
+        return publication_date;
+    }
+
+    public void setPublication_date(Date publication_date) {
+        this.publication_date = publication_date;
+    }
 }

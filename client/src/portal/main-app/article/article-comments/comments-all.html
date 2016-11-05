@@ -1,9 +1,9 @@
-<div class="col-md-10 col-md-offset-1">
-    <h3>Komentarze</h3>
+<div class="col-md-8 col-md-offset-2 comment-top-margin">
+    <h4>Komentarze:</h4>
     <ul>
-        <li ng-repeat="comment in allComents">
-            <div> {{comment.name}} </div>
-            <div> {{comment.content}} </div>
+        <li class="comment" ng-repeat="comment in allComents">
+            <div> Imie: {{comment.name}} </div>
+            <div class="comment-content"> {{comment.content}} </div>
         </li>
     </ul>
 

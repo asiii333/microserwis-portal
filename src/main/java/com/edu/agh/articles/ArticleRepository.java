@@ -13,6 +13,5 @@ import java.util.List;
 public interface ArticleRepository extends Repository<Article, Long> {
 
     public Article findByArtNumber(String number);
-    public Article findByArtNumberPaged(String number, Pageable pageable);
     Article save(Article article);
 }

@@ -3,10 +3,9 @@ package com.edu.agh.articles;
 import com.edu.agh.exceptions.ArticleNotFoundException;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.logging.Logger;
 
 @RestController
@@ -29,11 +28,19 @@ public class ArticlesController {
 
         logger.info("artivle-service byNumber() found: " + articleNumber);
 
-        if (article == null)
-            throw new ArticleNotFoundException(articleNumber);
-        else {
             return article;
-        }
-    }
 
+    }
+    @RequestMapping(method = RequestMethod.POST, value = "/article/add")
+    public Article addArticle(@RequestBody Article article) {
+
+        logger.info("article-service add new article");
+        article.setPublication_date(new Date());
+        Article newArticle = articleRepository.save(article);
+
+        logger.info("artivle-service add new article: " + newArticle.getNumber());
+
+        return article;
+
+    }
 }

@@ -1,9 +1,6 @@
 package com.edu.agh.titles;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by asiab on 2016-11-03.
@@ -12,10 +9,13 @@ import javax.persistence.Table;
 @Table(name = "T_TITLES")
 public class Title {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column(name = "art_number")
     private String artNumber;
     private String title;
+
+    @Column(name = "art_describe")
     private String describe;
     private String category;
     private String tag;

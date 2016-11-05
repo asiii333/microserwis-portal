@@ -7,7 +7,6 @@ var mainPage = angular.module('mainPage', [
 mainPage.controller('mainPageCtr',function($scope){});
 mainPage.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/category');
     $stateProvider
             .state('main', {
                 url: '/main',

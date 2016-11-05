@@ -1,8 +1,6 @@
 package com.edu.agh.comments;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by asiab on 2016-11-04.
@@ -11,9 +9,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_COMMENTS")
 public class Comment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
     @Column(name = "art_number")
     private String artNumber;
     private String content;
+    @Column(name = "author_name")
     private String name;
 
     public String getArtNumber() {
@@ -38,5 +40,13 @@ public class Comment {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -17,6 +17,10 @@ footer{
     float:left;
 }
 
+.margin-left {
+    margin-left: 20px;
+}
+
 span.footer-element{
     margin-left:20px;
     margin-right:20px;
@@ -28,3 +32,27 @@ a.footer-element{
     margin-right:10px;
     color : #999;
 }
+
+/**************/
+.comment {
+    margin-top: 10px;
+}
+.comment-content{
+    font-style: italic;
+}
+
+/**********/
+
+.article-tag{
+    font-size:11px;
+}
+
+.article-tag-down{
+   margin-top: 20px;
+   margin-bottom: 30px;
+}
+
+.comment-top-margin{
+       margin-top: 30px;
+}
+

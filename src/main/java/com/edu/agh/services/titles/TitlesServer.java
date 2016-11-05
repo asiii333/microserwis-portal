@@ -18,6 +18,6 @@ public class TitlesServer {
     public static void main(String[] args) {
         System.setProperty("spring.config.name", "titles-server");
 
-        SpringApplication.run(CommentsServer.class, args);
+        SpringApplication.run(TitleConfiguration.class, args);
     }
 }

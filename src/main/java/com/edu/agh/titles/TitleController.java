@@ -23,56 +23,70 @@ public class TitleController {
     private TitleRepository titleRepository;
 
     @RequestMapping(value = "/title/{articleNumber}")
-    public Title getTitleForArticle(@PathVariable("articleNumber") String articleNumber) {
+    public TitleResponse getTitleForArticle(@PathVariable("articleNumber") String articleNumber) {
 
         logger.info("title-service get titles for: "  + articleNumber);
 
         Title title = titleRepository.findByArtNumber(articleNumber);
+        TitleResponse response = TitleUtil.getTitleResponse(title);
 
-        logger.info("title-service title title: " + title.getTitle());
+        logger.info("title-service title ");
 
-            return title;
+            return response;
 
     }
 
     @RequestMapping(value = "/title/{category}/{page}")
-    public List<Title> getTitlesByCategoryLimited(@PathVariable("category") String category,
+    public List<TitleResponse> getTitlesByCategoryLimited(@PathVariable("category") String category,
                                        @PathVariable("page") int page) {
 
         logger.info("title-service find title byNumber() invoked: " + category);
 
-        PageRequest pageRequest = preparePagedData(page);
-        List<Title> title = titleRepository.findByCategoryPaged(category,pageRequest);
+        PageRequest pageRequest = TitleUtil.preparePagedDataForCategory(page);
+        List<Title> titles = titleRepository.findByCategory(category,pageRequest);
+        List<TitleResponse> titleResponses= TitleUtil.getResponseTitleList(titles);
 
-        logger.info("title-service found article number: " );
+
+        logger.info("title-service found article number:" + titles.size() );
 
 
-            return title;
+            return titleResponses;
+    }
+
+    @RequestMapping(value = "/title/all")
+    public List<TitleResponse> getAllTitles() {
+
+        logger.info("title-service find all article ");
+
+        List<Title> titles = titleRepository.findAll();
+        List<TitleResponse> titleResponses= TitleUtil.getResponseTitleList(titles);
+
+
+        logger.info("title-service find all article number:" + titles.size() );
+
+
+        return titleResponses;
     }
 
     @RequestMapping(value = "/title/main/{category}")
-    public List<Title> getTitlesByCategoryForMainPage(@PathVariable("category") String category) {
+    public List<TitleResponse> getTitlesByCategoryForMainPage(@PathVariable("category") String category) {
 
         logger.info("title-service find title byNumber() invoked: " + category);
 
-        PageRequest pageRequest = new PageRequest(1,6);
-        List<Title> title = titleRepository.findByCategoryPaged(category,pageRequest);
+        PageRequest pageRequest = TitleUtil.preparePagedDataForMainPage();
+        List<Title> titles = titleRepository.findByCategory(category,pageRequest);
+        List<TitleResponse> titleResponses= TitleUtil.getResponseTitleList(titles);
 
-        logger.info("title-service found article number: " );
+        logger.info("title-service found article number: " + titles.size());
 
 
-        return title;
-    }
-
-    private PageRequest preparePagedData(int page) {
-        int fromComment = 10 * (page -1);
-        int toComment = (10 * page) + 9;
-        PageRequest pageRequest = new PageRequest(fromComment, toComment);
-        return pageRequest;
+        return titleResponses;
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/title/{articleNumber}/add")
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/title/add")
     public Title addTitle(@RequestBody Title title) {
 
         logger.info("add new title, to article: " + title.getArtNumber());

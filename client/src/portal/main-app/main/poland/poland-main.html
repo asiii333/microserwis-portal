@@ -1,4 +1,13 @@
 <div ng-controller="mainPagePolandCtr">
-    news form poland
-{{poalnd_example}}
-    </div>
+
+
+    <h3>
+        Polska:
+    </h3>
+    <ul>
+        <li ng-repeat="art in articles" >
+            <a ui-sref="article/{{art.num}}">{{ art.title }}</a>
+        </li>
+    </ul>
+
+</div>
