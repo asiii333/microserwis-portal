@@ -1,9 +1,13 @@
-<div ng-controller="mainPagePolandCtr">
+<div ng-controller="mainPagePolandCtr" class="mainComponent">
+
 
 
     <h3>
-        Polska:
+        Polska
     </h3>
+    <div class="img-cont-main-contener">
+        <img src="../img/main/poland.jpg" width="300" height="110"/>
+    </div>
     <ul>
         <li ng-repeat="art in articles" >
             <a ui-sref="article/{{art.num}}">{{ art.title }}</a>

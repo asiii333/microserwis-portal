@@ -1,9 +1,12 @@
 <div ng-controller="articleContentCtr">
     <div class="row">
 
-        <div class=" col-md-10 col-md-offset-1" >
-            <div class="article-category">
+        <div class=" col-md-10 col-md-offset-1 article-category" >
+            <div>
                 Kategoria: {{articleTitle.category}}
+            </div>
+            <div>
+                Autor: Joanna Bona
             </div>
             <div class="article-tag">
                 <span>tagi:</span>
@@ -22,11 +25,19 @@
         </div>
 
         <div class=" col-md-8 col-md-offset-2" >
+
+            <div class="article-image">
+                <img src="../img/article/{{articleTitle.category}}.jpg">
+            </div>
+
             <div class="article-short">
                 <h4> {{articleTitle.describe}} </h4>
             </div>
+
             <div class="article-content">
+
                 {{articleContent.content}}
+
             </div>
         </div>
 

@@ -1,14 +1,23 @@
 <div ng-controller="categoryArticleListCtr"  class="col-md-10 col-md-offset-1 comment-top-margin">
 
     <h1>{{categoryName}}</h1>
+
     <div  class="col-md-10 col-md-offset-1">
-        <div  ng-repeat="article in articleList">
+        <div  class="article-list-element" ng-repeat="article in articleList">
             <a href="app.html#/article/{{article.artNumber}}">
-                <h2>  {{article.title}} </h2>
-                <h4>  {{article.describe}} </h4>
+                <h4>  {{article.title}} </h4>
+                <h5>  {{article.describe}} </h5>
             </a>
 
         </div>
+
+        <ul style=" float:right;" class="pagination">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
 
     </div>
 </div>

@@ -1,5 +1,5 @@
 var mainPageMagazine = angular.module('mainPage.magazine',[])
-.controller('mainPageMagazineCtr', function($scope){
+.controller('mainPageMagazineCtr', function($scope, $http){
 
              getArticle();
 

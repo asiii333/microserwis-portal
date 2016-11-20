@@ -4,6 +4,7 @@ var articleComments = angular.module('article.add',[])
 
     $scope.newArticleContent = {};
     $scope.newArticleTitle = {};
+    $scope.img = {};
 
     $scope.saveArticle = function(){
 

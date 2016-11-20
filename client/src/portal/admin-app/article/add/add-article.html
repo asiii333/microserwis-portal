@@ -40,6 +40,22 @@
                 <input type="text" id="tags" class="form-control  input-sm" placeholder="Tagi" required="true" autofocus="" ng-model="newArticleTitle.tag"/>
             </div>
 
+            <div class="form-group">
+                <label for="icon">Ikona</label>
+                <input type="file" id="icon" class="btn  "  autofocus="" ng-model="img.icon"/>
+            </div>
+
+            <div class="form-group">
+                <label for="firstImg">Pierwsza ilustracja</label>
+                <input type="file" id="firstImg" class="btn  "   ng-model="img.fistImg"/>
+            </div>
+
+            <div class="form-group">
+                <label for="lastImg">Ostatnia ilustracja</label>
+                <input type="file" id="lastImg" class="btn  "  ng-model="img.fistImg"/>
+            </div>
+
+
             <button class="btn btn-primary " type="submit">Opublikuj</button>
 
         </form>

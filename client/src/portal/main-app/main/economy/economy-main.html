@@ -1,7 +1,10 @@
-<div ng-controller="mainPageEconomyCtr">
+<div ng-controller="mainPageEconomyCtr" class="mainComponent">
     <h3>
         Gospodarka
     </h3>
+    <div class="img-cont-main-contener">
+        <img src="../img/main/economy.jpg" width="300" height="110"/>
+    </div>
     <ul>
         <li ng-repeat="art in articles" >
             <a ui-sref="article/{{art.num}}">{{ art.title }}</a>

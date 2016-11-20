@@ -56,3 +56,59 @@ a.footer-element{
        margin-top: 30px;
 }
 
+/*********************/
+
+.logo{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.logo a{
+    font-size: 26px;
+}
+
+.menu{
+    border-top: 1px solid #999
+}
+
+.menu a{
+    font-size: 12px;
+}
+
+
+/******************/
+.mainComponent {
+    margin: 10px;
+    padding: 10px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    }
+
+    .img-cont-main-contener{
+        margin-left: 9px;
+        margin-top: 20px;
+        margin-bottom: 16px;
+    }
+
+    .magazin-title-mian{
+        height: 350px;
+        color: white;
+        font-size:50px
+
+    }
+
+a {
+    color: #555;
+
+    }
+
+
+/******************/
+
+.article-category {
+    margin-top:20px;
+}
+
+.article-list-element{
+   margin-top:30px;
+}

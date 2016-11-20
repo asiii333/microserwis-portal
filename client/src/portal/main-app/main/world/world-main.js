@@ -1,5 +1,5 @@
 var mainPageWorld = angular.module('mainPage.world',[])
-.controller('mainPageWorldCtr', function($scope){
+.controller('mainPageWorldCtr', function($scope, $http){
 
         getArticle();
 

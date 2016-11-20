@@ -1,10 +1,16 @@
-<div ng-controller="mainPageMagazineCtr">
-    <h3>
-        Magazyn
-    </h3>
-    <ul>
-        <li ng-repeat="art in articles" >
-            <a ui-sref="article/{{art.num}}">{{ art.title }}</a>
-        </li>
-    </ul>
+<div ng-controller="mainPageMagazineCtr" >
+
+    <div class="magazin-title-mian" >
+
+    <img src="../img/main/magazine.jpg" width="1200">
+    </div>
+
+    <div class="mainComponent">
+        <ul>
+            <li ng-repeat="art in articles" >
+                <a ui-sref="article/{{art.num}}">{{ art.title }}</a>
+            </li>
+        </ul>
+    </div>
+
 </div>

@@ -1,9 +1,9 @@
-var app = angular.module('mainApp', [
+var app = angular.module('adminApp', [
     'ui.router',
     'article.add'
     ]);
 
-app.controller('appCtr', function($scope){
+app.controller('adminCtr', function($scope){
 
     $scope.articleServisAdress = 'http://localhost:2221';
     $scope.titleServisAdress = 'http://localhost:2223';
@@ -16,7 +16,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
         .state('articleadd', {
-            url: '/article/add',
+            url: '/articleadd',
             templateUrl: 'article/add/add-article.html'
         });
 
